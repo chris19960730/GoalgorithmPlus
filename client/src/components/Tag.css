@@ -1,0 +1,23 @@
+.tags {
+  display: inline-block;
+  background: #212121;
+  padding: 8px 10px;
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.075rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 15%;
+}
+
+.tags:active {
+  box-shadow: none;
+  transform-origin: center;
+  transform: scale(0.95);
+}
+
+.tags:focus {
+  outline: 10px dotted black;
+}

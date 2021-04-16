@@ -1,0 +1,7 @@
+.card {
+  min-height: 35rem;
+}
+.votes {
+  margin-left: 1rem;
+  max-width: 10rem;
+}
