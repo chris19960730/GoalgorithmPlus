@@ -15,7 +15,6 @@
     "react-multi-select-component": "^4.0.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "react-search-field": "^1.2.0",
     "react-toggle": "^4.1.2",
     "sweetalert2": "^10.15.6",
     "web-vitals": "^1.0.1"

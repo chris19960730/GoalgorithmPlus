@@ -4,7 +4,6 @@ import { useHistory } from 'react-router';
 import PropTypes from 'prop-types';
 import Swal from 'sweetalert2';
 import Pagination from 'react-js-pagination';
-import SearchField from 'react-search-field';
 
 import Article from './Article';
 import Navigation from './Navigation';
