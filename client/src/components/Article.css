@@ -2,7 +2,8 @@
 body {
   background: #f3f3f3;
   padding: 20px;
-  font-family: 'Open Sans', sans-serif;
+  /* font-family: 'Open Sans', sans-serif; */
+  font-family: 'Playfair Display', serif;
 }
 
 /* Column */
