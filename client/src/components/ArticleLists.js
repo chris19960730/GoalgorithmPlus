@@ -213,7 +213,7 @@ function ArticleLists({ perPage, domain }) {
   return (
     <>
       <Navigation />
-      <div className="container">
+      <div className="container mb-5">
         <div className="row justify-content-center my-3 ">
           <SearchBar
             placeholder="Search here"
@@ -236,35 +236,46 @@ function ArticleLists({ perPage, domain }) {
             }}
           />
         </div>
-        <div>
-          <h4>Currently filtered by: </h4>
-          Tag filter:
-          {tagFilter ? (
-            <button
-              type="button"
-              class="btn btn-outline-primary btn-rounded"
-              data-mdb-ripple-color="dark"
-              onClick={resetTagFilter}
-            >
-              {tagFilter}
-            </button>
-          ) : null}
-          Search filter:{' '}
-          {searchFilter ? (
-            <button
-              type="button"
-              class="btn btn-outline-primary btn-rounded"
-              data-mdb-ripple-color="dark"
-              onClick={resetSearchFilter}
-            >
-              {searchFilter}
-            </button>
-          ) : null}
-        </div>
       </div>
 
       <div className="articlelists-container">
-        {domain === 'personal' ? <h1>My Articles</h1> : <h1>All Articles</h1>}
+        <div className="column">
+          {domain === 'personal' ? <h1>My Articles</h1> : <h1>All Articles</h1>}
+          <div className="d-flex my-1">
+            {tagFilter ? (
+              <div className="d-flex align-items-md-center me-2">
+                <h5>
+                  <span class="badge bg-dark">{tagFilter}</span>
+                </h5>
+
+                <button
+                  type="button"
+                  class="close"
+                  aria-label="Close"
+                  onClick={resetTagFilter}
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            ) : null}
+            {searchFilter ? (
+              <div className="d-flex align-items-md-center">
+                <h5>
+                  <span class="badge bg-dark">{searchFilter}</span>
+                </h5>
+
+                <button
+                  type="button"
+                  class="close"
+                  aria-label="Close"
+                  onClick={resetSearchFilter}
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            ) : null}
+          </div>
+        </div>
         {renderArticles()}
       </div>
 

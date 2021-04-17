@@ -18,6 +18,12 @@
   transform: scale(0.95);
 }
 
+.tags:hover {
+  box-shadow: 5px 2px 2px black;
+  transform-origin: center;
+  transform: scale(0.95);
+}
+
 .tags:focus {
   outline: 10px dotted black;
 }

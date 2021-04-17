@@ -97,7 +97,7 @@ function Navigation() {
               <li className="nav-item">
                 <form onSubmit={handleLogOut}>
                   <input
-                    className="btn btn-block btn-danger"
+                    className="btn btn-block btn-outline-dark"
                     type="submit"
                     value="logout"
                   />
