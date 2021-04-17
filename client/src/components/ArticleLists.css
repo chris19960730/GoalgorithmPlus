@@ -17,3 +17,7 @@
   max-width: 960px;
   margin: 0 auto;
 }
+
+.page-item :focus {
+  outline: 10px dotted black;
+}
