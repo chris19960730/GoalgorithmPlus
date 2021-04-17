@@ -8,6 +8,7 @@ import SearchField from 'react-search-field';
 
 import Article from './Article';
 import Navigation from './Navigation';
+import SearchBar from './SearchBar';
 import './ArticleLists.css';
 
 function ArticleLists({ perPage, domain }) {
@@ -202,33 +203,63 @@ function ArticleLists({ perPage, domain }) {
     }
   };
 
+  const resetSearchFilter = () => {
+    setSearchFilter('');
+  };
+  const resetTagFilter = () => {
+    setTagFilter('');
+  };
+
   return (
     <>
       <Navigation />
       <div className="container">
         <div className="row justify-content-center my-3 ">
-          <div className="col-lg-3">
-            <SearchField
-              placeholder="Search item"
-              onChange={setSearchTempFilter}
-              onSearchClick={() => {
-                Swal.fire(
-                  'Search completed',
-                  'Successfully filtered!',
-                  'success'
-                );
-                setSearchFilter(searchTempFilter);
-              }}
-              onEnter={() => {
-                Swal.fire(
-                  'Search completed',
-                  'Successfully filtered!',
-                  'success'
-                );
-                setSearchFilter(searchTempFilter);
-              }}
-            />
-          </div>
+          <SearchBar
+            placeholder="Search here"
+            onChange={setSearchTempFilter}
+            onSearchClick={() => {
+              Swal.fire(
+                'Search completed',
+                'Successfully filtered!',
+                'success'
+              );
+              setSearchFilter(searchTempFilter);
+            }}
+            onEnter={() => {
+              Swal.fire(
+                'Search completed',
+                'Successfully filtered!',
+                'success'
+              );
+              setSearchFilter(searchTempFilter);
+            }}
+          />
+        </div>
+        <div>
+          <h4>Currently filtered by: </h4>
+          Tag filter:
+          {tagFilter ? (
+            <button
+              type="button"
+              class="btn btn-outline-primary btn-rounded"
+              data-mdb-ripple-color="dark"
+              onClick={resetTagFilter}
+            >
+              {tagFilter}
+            </button>
+          ) : null}
+          Search filter:{' '}
+          {searchFilter ? (
+            <button
+              type="button"
+              class="btn btn-outline-primary btn-rounded"
+              data-mdb-ripple-color="dark"
+              onClick={resetSearchFilter}
+            >
+              {searchFilter}
+            </button>
+          ) : null}
         </div>
       </div>
 
@@ -236,6 +267,7 @@ function ArticleLists({ perPage, domain }) {
         {domain === 'personal' ? <h1>My Articles</h1> : <h1>All Articles</h1>}
         {renderArticles()}
       </div>
+
       <div className="container mt-5">
         <div className="row justify-content-center ">
           <div className="col-lg-3 "></div>
