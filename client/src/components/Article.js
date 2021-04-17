@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
+import ReactTooltip from 'react-tooltip';
 import './Article.css';
 import Tag from './Tag';
 import Description from './Description';
@@ -23,6 +24,9 @@ function Article({
       return renderTag(tag.color, tag.name, onClickTag(tag), i);
     });
   };
+  const style = {
+    backgroundColor: '#333333',
+  };
 
   return (
     <>
@@ -34,20 +38,57 @@ function Article({
 
           <div className="row">
             <div className="col-3">
-              <Button variant="outline-dark" onClick={onView}>
-                View More
-              </Button>
+              <button
+                className="btn btn-primary me-1"
+                aria-label="View"
+                // style={style}
+                onClick={onView}
+                data-tip
+                data-for="view"
+              >
+                <i class="fas fa-expand"></i>
+              </button>
             </div>
             <div className="col-6"></div>
 
             {editable ? (
               <div className="col-3">
-                <Button variant="outline-info me-2" onClick={onClickEdit}>
+                {/* <Button variant="outline-info me-2" onClick={onClickEdit}>
                   Edit
-                </Button>
-                <Button variant="outline-danger" onClick={onClickDelete}>
+                </Button> */}
+                <button
+                  className="btn btn-primary me-1"
+                  aria-label="Edit"
+                  style={style}
+                  onClick={onClickEdit}
+                  data-tip
+                  data-for="edit"
+                >
+                  <i className="fas fa-edit"></i>
+                </button>
+
+                <button
+                  className="btn btn-primary"
+                  aria-label="Delete"
+                  style={style}
+                  onClick={onClickDelete}
+                  data-tip
+                  data-for="delete"
+                >
+                  <i className="fas fa-trash-alt"></i>
+                </button>
+                <ReactTooltip id="view" type="dark">
+                  <span>View the full article</span>
+                </ReactTooltip>
+                <ReactTooltip id="delete" type="error">
+                  <span>Delete the article</span>
+                </ReactTooltip>
+                <ReactTooltip id="edit" type="info">
+                  <span>Edit the article</span>
+                </ReactTooltip>
+                {/* <Button variant="outline-danger" onClick={onClickDelete}>
                   Delete
-                </Button>
+                </Button> */}
               </div>
             ) : (
               <div className="col-3"></div>
