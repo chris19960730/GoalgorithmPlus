@@ -32,3 +32,10 @@ body {
   font-weight: 600;
   line-height: 1.75rem;
 }
+
+.btn:focus {
+  outline: none;
+  transform: scale(1.2);
+  box-shadow: 20px 15px 30px yellow, -20px 15px 30px lime, -20px -15px 30px blue,
+    20px -15px 30px red;
+}

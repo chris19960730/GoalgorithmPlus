@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 import ReactTooltip from 'react-tooltip';
 import './Article.css';
@@ -46,7 +45,7 @@ function Article({
                 data-tip
                 data-for="view"
               >
-                <i class="fas fa-expand"></i>
+                View more
               </button>
             </div>
             <div className="col-6"></div>
