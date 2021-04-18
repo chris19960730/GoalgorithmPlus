@@ -3,7 +3,7 @@ import { useHistory } from 'react-router';
 import Swal from 'sweetalert2';
 import './Login.css';
 import Input from './Input';
-
+import logo from '../images/logo.png';
 function Login() {
   const history = useHistory();
 
@@ -72,10 +72,10 @@ function Login() {
         <div className="col-md-4 text-center company__info">
           <span className="company__logo">
             <h2>
-              <span className="fa fa-android"></span>
+              <img src={logo} alt="logo" height="140" />
             </h2>
           </span>
-          <h4 className="company_title">Your Company Logo</h4>
+          <h3 className="company_title">Goalgorithm Plus</h3>
         </div>
         <div className="col-md-8 col-xs-12 col-sm-12 login_form ">
           <div className="container-fluid">

@@ -160,7 +160,6 @@ function EditArticle() {
                 options={options}
                 value={selected}
                 onChange={setSelected}
-                labelledBy="Select"
                 required
               />
             </Col>
@@ -189,12 +188,12 @@ function EditArticle() {
               value={editArticleFormData.content}
             />
           </Form.Group>
-          <Button type="submit" variant="outline-success mt-3">
+          <Button type="submit" variant="outline-primary mt-3">
             Update Article
           </Button>
         </Form>
         <div className="container mt-5">
-          <h3> Content Preview</h3>
+          <h2> Content Preview</h2>
           <ReactMarkdown>{editArticleFormData.content}</ReactMarkdown>
         </div>
       </div>

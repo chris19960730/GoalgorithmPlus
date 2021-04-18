@@ -85,9 +85,6 @@ function Article({
                 <ReactTooltip id="edit" type="info">
                   <span>Edit the article</span>
                 </ReactTooltip>
-                {/* <Button variant="outline-danger" onClick={onClickDelete}>
-                  Delete
-                </Button> */}
               </div>
             ) : (
               <div className="col-3"></div>

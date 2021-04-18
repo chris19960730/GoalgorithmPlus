@@ -6,13 +6,13 @@
   display: flex;
 }
 .company__info {
-  background-color: #008080;
+  background-color: #f5f5f5;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #fff;
+  color: #268c3c;
 }
 .fa-android {
   font-size: 3em;
@@ -35,7 +35,7 @@
   }
 }
 .row > h2 {
-  color: #008080;
+  color: #268c3c;
 }
 .login_form {
   background-color: #fff;
@@ -52,15 +52,15 @@ form {
   transition: all 0.5s ease;
   width: 70%;
   border-radius: 30px;
-  color: #008080;
+  color: #1266f1;
   font-weight: 600;
   background-color: #fff;
-  border: 1px solid #008080;
+  border: 1px solid #1266f1;
   margin-top: 1.5em;
   margin-bottom: 1em;
 }
 .loginBtn:hover,
 .loginBtn:focus {
-  background-color: #008080;
+  background-color: #1266f1;
   color: #fff;
 }
