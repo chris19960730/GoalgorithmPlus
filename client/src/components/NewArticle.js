@@ -196,10 +196,10 @@ function NewArticle() {
               Create Article
             </Button>
           </Form>
-        </div>
-        <div className="container mt-5">
-          <h2> Content Preview</h2>
-          <ReactMarkdown>{newArticleFormData.content}</ReactMarkdown>
+          <div className="col mt-5">
+            <h2> Content Preview</h2>
+            <ReactMarkdown>{newArticleFormData.content}</ReactMarkdown>
+          </div>
         </div>
       </div>
     </>

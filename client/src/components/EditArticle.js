@@ -136,65 +136,67 @@ function EditArticle() {
 
       <div className="container new-article-container ">
         <h1>Edit Article</h1>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group as={Row} controlId="title">
-            <Form.Label column sm="2">
-              Title
-            </Form.Label>
-            <Col sm="10">
+        <div className="row mt-5">
+          <Form onSubmit={handleSubmit}>
+            <Form.Group as={Row} controlId="title">
+              <Form.Label column sm="2">
+                Title
+              </Form.Label>
+              <Col sm="10">
+                <Form.Control
+                  required
+                  name="title"
+                  onChange={onChangeEventListener}
+                  placeholder="Please input the title of the article..."
+                  value={editArticleFormData.title}
+                />
+              </Col>
+            </Form.Group>
+            <Form.Group as={Row} controlId="tags">
+              <Form.Label column sm="2">
+                Tags
+              </Form.Label>
+              <Col sm="10">
+                <MultiSelect
+                  options={options}
+                  value={selected}
+                  onChange={setSelected}
+                  required
+                />
+              </Col>
+            </Form.Group>
+            <Form.Group controlId="description">
+              <Form.Label>Description</Form.Label>
               <Form.Control
                 required
-                name="title"
+                as="textarea"
+                rows={3}
+                placeholder="Please input the description of the article..."
+                name="description"
                 onChange={onChangeEventListener}
-                placeholder="Please input the title of the article..."
-                value={editArticleFormData.title}
+                value={editArticleFormData.description}
               />
-            </Col>
-          </Form.Group>
-          <Form.Group as={Row} controlId="tags">
-            <Form.Label column sm="2">
-              Tags
-            </Form.Label>
-            <Col sm="10">
-              <MultiSelect
-                options={options}
-                value={selected}
-                onChange={setSelected}
+            </Form.Group>
+            <Form.Group controlId="content">
+              <Form.Label>Content</Form.Label>
+              <Form.Control
                 required
+                as="textarea"
+                rows={3}
+                placeholder="Please input the full article..."
+                name="content"
+                onChange={onChangeEventListener}
+                value={editArticleFormData.content}
               />
-            </Col>
-          </Form.Group>
-          <Form.Group controlId="description">
-            <Form.Label>Description</Form.Label>
-            <Form.Control
-              required
-              as="textarea"
-              rows={3}
-              placeholder="Please input the description of the article..."
-              name="description"
-              onChange={onChangeEventListener}
-              value={editArticleFormData.description}
-            />
-          </Form.Group>
-          <Form.Group controlId="content">
-            <Form.Label>Content</Form.Label>
-            <Form.Control
-              required
-              as="textarea"
-              rows={3}
-              placeholder="Please input the full article..."
-              name="content"
-              onChange={onChangeEventListener}
-              value={editArticleFormData.content}
-            />
-          </Form.Group>
-          <Button type="submit" variant="outline-primary mt-3">
-            Update Article
-          </Button>
-        </Form>
-        <div className="container mt-5">
-          <h2> Content Preview</h2>
-          <ReactMarkdown>{editArticleFormData.content}</ReactMarkdown>
+            </Form.Group>
+            <Button type="submit" variant="outline-primary mt-3">
+              Update Article
+            </Button>
+          </Form>
+          <div className="col mt-5">
+            <h2> Content Preview</h2>
+            <ReactMarkdown>{editArticleFormData.content}</ReactMarkdown>
+          </div>
         </div>
       </div>
     </>
