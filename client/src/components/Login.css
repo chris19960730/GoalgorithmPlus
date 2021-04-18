@@ -64,3 +64,7 @@ form {
   background-color: #1266f1;
   color: #fff;
 }
+
+.swal2-confirm.swal2-styled {
+  background-color: #1266f1;
+}

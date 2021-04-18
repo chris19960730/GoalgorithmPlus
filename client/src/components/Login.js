@@ -56,7 +56,7 @@ function Login() {
         } else {
           Swal.fire(
             'Oops...',
-            'This account does not exsit in our system!',
+            'The email and/or password you specified are not correct.',
             'error'
           );
         }
