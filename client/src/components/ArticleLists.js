@@ -9,6 +9,7 @@ import Article from './Article';
 import Navigation from './Navigation';
 import SearchBar from './SearchBar';
 import Footer from './Footer';
+import PacmanLoader from 'react-spinners/PacmanLoader';
 import './ArticleLists.css';
 
 function ArticleLists({ perPage, domain }) {
@@ -19,6 +20,7 @@ function ArticleLists({ perPage, domain }) {
   const [searchFilter, setSearchFilter] = useState('');
   const [activePage, setActivePage] = useState(1);
   const [articlesCount, setArticlesCount] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   const history = useHistory();
   const getAllArticles = async (
@@ -38,6 +40,7 @@ function ArticleLists({ perPage, domain }) {
         searchFilter
     );
     const res = await resRaw.json();
+    setLoading(false);
     setArticles(res);
   };
 
@@ -55,6 +58,7 @@ function ArticleLists({ perPage, domain }) {
         searchFilter
     );
     const res = await resRaw.json();
+    setLoading(false);
     setArticles(res);
   };
 
@@ -88,6 +92,7 @@ function ArticleLists({ perPage, domain }) {
   }, []);
 
   useEffect(() => {
+    setLoading(true);
     if (domain === 'personal') {
       getMyArticles(0, perPage, tagFilter, searchFilter);
       getMyArticleCount(tagFilter, searchFilter);
@@ -195,6 +200,7 @@ function ArticleLists({ perPage, domain }) {
 
   const handlePageChange = (pageNumber) => {
     setActivePage(pageNumber);
+    setLoading(true);
     const start = perPage * (pageNumber - 1);
     if (domain === 'personal') {
       getMyArticles(start, perPage, tagFilter, searchFilter);
@@ -213,102 +219,126 @@ function ArticleLists({ perPage, domain }) {
   return (
     <>
       <Navigation />
-      <div className="container mb-5">
-        <div className="row justify-content-center my-3 ">
-          <SearchBar
-            placeholder="Search here"
-            onChange={setSearchTempFilter}
-            onSearchClick={() => {
-              Swal.fire(
-                'Search completed',
-                'Successfully filtered!',
-                'success'
-              );
-              setSearchFilter(searchTempFilter);
-            }}
-            onEnter={() => {
-              Swal.fire(
-                'Search completed',
-                'Successfully filtered!',
-                'success'
-              );
-              setSearchFilter(searchTempFilter);
-            }}
-          />
+      {loading ? (
+        <div
+          className="row flex justify-content-center align-items-center"
+          style={{ minHeight: '300px' }}
+        >
+          <PacmanLoader loading={loading} size={50} />
         </div>
-      </div>
+      ) : (
+        <div>
+          <div className="container mb-5">
+            <div className="row justify-content-center my-3 ">
+              <SearchBar
+                placeholder="Search here"
+                onChange={setSearchTempFilter}
+                onSearchClick={() => {
+                  Swal.fire(
+                    'Search completed',
+                    'Successfully filtered!',
+                    'success'
+                  );
+                  setSearchFilter(searchTempFilter);
+                }}
+                onEnter={() => {
+                  Swal.fire(
+                    'Search completed',
+                    'Successfully filtered!',
+                    'success'
+                  );
+                  setSearchFilter(searchTempFilter);
+                }}
+              />
+            </div>
+          </div>
 
-      <div className="articlelists-container">
-        <div className="column mb-3">
-          {domain === 'personal' ? <h1>My Articles</h1> : <h1>All Articles</h1>}
+          <div className="articlelists-container">
+            <div className="column mb-3">
+              {domain === 'personal' ? (
+                <h1>My Articles</h1>
+              ) : (
+                <h1>All Articles</h1>
+              )}
 
-          <div className="d-flex my-1">
-            {tagFilter ? (
-              <div className="d-flex align-items-md-center me-2">
-                <h5>
-                  <span className="badge bg-dark" data-tip data-for="removeBtn">
-                    {tagFilter}
-                  </span>
-                  <ReactTooltip id="removeBtn" type="info">
-                    <span>Click X to remove the filter</span>
-                  </ReactTooltip>
-                </h5>
+              <div className="d-flex my-1">
+                {tagFilter ? (
+                  <div className="d-flex align-items-md-center me-2">
+                    <h5>
+                      <span
+                        className="badge bg-dark"
+                        data-tip
+                        data-for="removeBtn"
+                      >
+                        {tagFilter}
+                      </span>
+                      <ReactTooltip id="removeBtn" type="info">
+                        <span>Click X to remove the filter</span>
+                      </ReactTooltip>
+                    </h5>
 
-                <button
-                  type="button"
-                  className="close"
-                  aria-label="Close"
-                  onClick={resetTagFilter}
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
+                    <button
+                      type="button"
+                      className="close"
+                      aria-label="Close"
+                      onClick={resetTagFilter}
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                ) : null}
+                {searchFilter ? (
+                  <div className="d-flex align-items-md-center">
+                    <h5>
+                      <span
+                        className="badge bg-dark"
+                        data-tip
+                        data-for="removeBtn"
+                      >
+                        {searchFilter}
+                      </span>
+                      <ReactTooltip id="removeBtn" type="info">
+                        <span>Click X to remove the filter</span>
+                      </ReactTooltip>
+                    </h5>
+
+                    <button
+                      type="button"
+                      className="close"
+                      aria-label="Close"
+                      onClick={resetSearchFilter}
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                ) : null}
               </div>
-            ) : null}
-            {searchFilter ? (
-              <div className="d-flex align-items-md-center">
-                <h5>
-                  <span className="badge bg-dark" data-tip data-for="removeBtn">
-                    {searchFilter}
-                  </span>
-                  <ReactTooltip id="removeBtn" type="info">
-                    <span>Click X to remove the filter</span>
-                  </ReactTooltip>
-                </h5>
+            </div>
+            {renderArticles()}
+          </div>
 
-                <button
-                  type="button"
-                  className="close"
-                  aria-label="Close"
-                  onClick={resetSearchFilter}
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
+          <div className="container my-5 p-4">
+            <div className="row justify-content-center ">
+              <div className="col-lg-3 "></div>
+              <div className="col-lg-3">
+                <Pagination
+                  activePage={activePage}
+                  itemsCountPerPage={perPage}
+                  totalItemsCount={articlesCount}
+                  pageRangeDisplayed={5}
+                  onChange={handlePageChange}
+                  itemClass="page-item"
+                  linkClass="page-link"
+                  hideDisabled
+                  hideFirstLastPages
+                />
               </div>
-            ) : null}
+              <div className="col-lg-3"></div>
+            </div>
           </div>
         </div>
-        {renderArticles()}
-      </div>
+      )}
 
-      <div className="container my-5 p-4">
-        <div className="row justify-content-center ">
-          <div className="col-lg-3 "></div>
-          <div className="col-lg-3">
-            <Pagination
-              activePage={activePage}
-              itemsCountPerPage={perPage}
-              totalItemsCount={articlesCount}
-              pageRangeDisplayed={5}
-              onChange={handlePageChange}
-              itemClass="page-item"
-              linkClass="page-link"
-              hideDisabled
-              hideFirstLastPages
-            />
-          </div>
-          <div className="col-lg-3"></div>
-        </div>
-      </div>
       <Footer />
     </>
   );

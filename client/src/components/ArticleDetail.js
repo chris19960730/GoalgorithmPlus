@@ -8,6 +8,7 @@ import Tag from './Tag';
 import Footer from './Footer';
 import ReactMarkdown from 'react-markdown';
 import Toggle from 'react-toggle';
+import HashLoader from 'react-spinners/HashLoader';
 import 'react-toggle/style.css';
 import './ArticleDetail.css';
 
@@ -24,12 +25,15 @@ function ArticleDetail() {
     votes: 0,
   });
   const [upvoted, setUpvoted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const getArticle = async () => {
     const resRaw = await fetch('/articles/' + articleID);
     const res = await resRaw.json();
+    setLoading(false);
     setArticle(res);
   };
   useEffect(() => {
+    setLoading(true);
     getArticle();
   }, []);
 
@@ -137,53 +141,63 @@ function ArticleDetail() {
     <>
       <Navigation />
       <div className="container my-5">
-        <Card>
-          <Card.Header>{article.title}</Card.Header>
-          <Card.Body>
-            {renderTags()}
-            <blockquote className="blockquote mb-0">
-              <ReactMarkdown>{article.content}</ReactMarkdown>
-              <footer className="blockquote-footer mt-5">
-                Created by <cite title="Source Title">{article.user_name}</cite>
-              </footer>
-            </blockquote>
-          </Card.Body>
-          <Card.Footer className="text-muted">
-            Created at{' '}
-            <cite title="Source Title">
-              {' '}
-              {new Date(article.created_at).toString().substring(0, 21)}
-            </cite>
-          </Card.Footer>
-          <label className="container">
-            <h3 className="votes">
-              <span className="me-2">
-                <i class="fab fa-gratipay"></i>
-              </span>
-              <span>{article.votes}</span>
-            </h3>
-            <Toggle
-              checked={upvoted}
-              className="custom-classname"
-              onChange={() => {
-                if (upvoted) {
-                  resettingRef.current = true;
-                  setArticle({
-                    ...article,
-                    votes: article.votes - 1,
-                  });
-                } else {
-                  resettingRef.current = true;
-                  setArticle({
-                    ...article,
-                    votes: article.votes + 1,
-                  });
-                  console.log(article);
-                }
-              }}
-            />
-          </label>
-        </Card>
+        {loading ? (
+          <div
+            className="row flex justify-content-center align-items-center"
+            style={{ minHeight: '300px' }}
+          >
+            <HashLoader loading={loading} size={50} />
+          </div>
+        ) : (
+          <Card>
+            <Card.Header>{article.title}</Card.Header>
+            <Card.Body>
+              {renderTags()}
+              <blockquote className="blockquote mb-0">
+                <ReactMarkdown>{article.content}</ReactMarkdown>
+                <footer className="blockquote-footer mt-5">
+                  Created by{' '}
+                  <cite title="Source Title">{article.user_name}</cite>
+                </footer>
+              </blockquote>
+            </Card.Body>
+            <Card.Footer className="text-muted">
+              Created at{' '}
+              <cite title="Source Title">
+                {' '}
+                {new Date(article.created_at).toString().substring(0, 21)}
+              </cite>
+            </Card.Footer>
+            <label className="container">
+              <h3 className="votes">
+                <span className="me-2">
+                  <i class="fab fa-gratipay"></i>
+                </span>
+                <span>{article.votes}</span>
+              </h3>
+              <Toggle
+                checked={upvoted}
+                className="custom-classname"
+                onChange={() => {
+                  if (upvoted) {
+                    resettingRef.current = true;
+                    setArticle({
+                      ...article,
+                      votes: article.votes - 1,
+                    });
+                  } else {
+                    resettingRef.current = true;
+                    setArticle({
+                      ...article,
+                      votes: article.votes + 1,
+                    });
+                    console.log(article);
+                  }
+                }}
+              />
+            </label>
+          </Card>
+        )}
       </div>
       <Footer />
     </>
