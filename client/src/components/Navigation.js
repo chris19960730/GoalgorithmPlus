@@ -14,7 +14,7 @@ function Navigation() {
       title: 'Goodbye~',
       text: 'See you next time!',
     });
-    history.push('/login');
+    history.push('/');
   };
 
   useEffect(() => {

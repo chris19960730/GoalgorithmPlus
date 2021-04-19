@@ -7,6 +7,7 @@ import ArticleLists from './components/ArticleLists';
 import ArticleDetail from './components/ArticleDetail';
 import NewArticle from './components/NewArticle';
 import EditArticle from './components/EditArticle';
+import LandingPage from './components/LandingPage';
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
           <EditArticle />
         </Route>
         <Route path="/">
-          <Login />
+          <LandingPage />
         </Route>
       </Switch>
     </Router>
