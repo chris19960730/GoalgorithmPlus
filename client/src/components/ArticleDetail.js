@@ -129,7 +129,7 @@ function ArticleDetail() {
     });
   };
   const renderTag = (color, name, i) => (
-    <Tag key={i} color={color} tag={name} />
+    <Tag key={i} color={color} tag={name} showToolTip={false} />
   );
 
   return (
@@ -142,7 +142,7 @@ function ArticleDetail() {
             {renderTags()}
             <blockquote className="blockquote mb-0">
               <ReactMarkdown>{article.content}</ReactMarkdown>
-              <footer className="blockquote-footer">
+              <footer className="blockquote-footer mt-5">
                 Created by <cite title="Source Title">{article.user_name}</cite>
               </footer>
             </blockquote>

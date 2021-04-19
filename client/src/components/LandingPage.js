@@ -162,7 +162,7 @@ function LandingPage() {
         </div>
       </section>
 
-      <footer id="contact-us">
+      <footer id="footer">
         <div className="container">
           <div className="footer-content">
             <div className="row">
