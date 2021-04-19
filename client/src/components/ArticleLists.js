@@ -245,12 +245,12 @@ function ArticleLists({ perPage, domain }) {
             {tagFilter ? (
               <div className="d-flex align-items-md-center me-2">
                 <h5>
-                  <span class="badge bg-dark">{tagFilter}</span>
+                  <span className="badge bg-dark">{tagFilter}</span>
                 </h5>
 
                 <button
                   type="button"
-                  class="close"
+                  className="close"
                   aria-label="Close"
                   onClick={resetTagFilter}
                 >
@@ -261,12 +261,12 @@ function ArticleLists({ perPage, domain }) {
             {searchFilter ? (
               <div className="d-flex align-items-md-center">
                 <h5>
-                  <span class="badge bg-dark">{searchFilter}</span>
+                  <span className="badge bg-dark">{searchFilter}</span>
                 </h5>
 
                 <button
                   type="button"
-                  class="close"
+                  className="close"
                   aria-label="Close"
                   onClick={resetSearchFilter}
                 >

@@ -5,6 +5,7 @@ import { useLocation, useHistory } from 'react-router';
 import Swal from 'sweetalert2';
 
 import Navigation from './Navigation';
+import Footer from './Footer';
 import ReactMarkdown from 'react-markdown';
 import MultiSelect from 'react-multi-select-component';
 import './NewArticle.css';
@@ -134,7 +135,7 @@ function EditArticle() {
     <>
       <Navigation />
 
-      <div className="container new-article-container ">
+      <div className="container new-article-container my-5">
         <h1>Edit Article</h1>
         <div className="row mt-5">
           <Form onSubmit={handleSubmit}>
@@ -199,6 +200,7 @@ function EditArticle() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Navigation from './Navigation';
 import Tag from './Tag';
+import Footer from './Footer';
 import ReactMarkdown from 'react-markdown';
 import Toggle from 'react-toggle';
 import 'react-toggle/style.css';
@@ -135,7 +136,7 @@ function ArticleDetail() {
   return (
     <>
       <Navigation />
-      <div className="container ">
+      <div className="container my-5">
         <Card>
           <Card.Header>{article.title}</Card.Header>
           <Card.Body>
@@ -184,6 +185,7 @@ function ArticleDetail() {
           </label>
         </Card>
       </div>
+      <Footer />
     </>
   );
 }
