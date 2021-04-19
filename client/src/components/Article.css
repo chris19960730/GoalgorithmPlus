@@ -39,3 +39,29 @@ body {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
+.btn:hover {
+  background-color: #dc3545;
+}
+
+.viewBtn {
+  background-color: #004b23;
+}
+
+.viewBtn:hover {
+  background-color: #bfd200;
+}
+
+.editBtn {
+  background-color: #333333;
+}
+
+.editBtn:hover {
+  background-color: #bfd200;
+}
+
+.deleteBtn {
+  background-color: #333333;
+}
+.deleteBtn:hover {
+  background-color: #bfd200;
+}

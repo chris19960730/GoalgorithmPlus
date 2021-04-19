@@ -35,10 +35,10 @@ function Article({
           <h2 className="article__title">{title}</h2>
           <Description description={description} />
 
-          <div className="row">
+          <div className="row mt-4">
             <div className="col-3">
               <button
-                className="btn btn-primary me-1"
+                className="btn btn-primary me-1 viewBtn"
                 aria-label="View"
                 // style={style}
                 onClick={onView}
@@ -56,9 +56,9 @@ function Article({
                   Edit
                 </Button> */}
                 <button
-                  className="btn btn-primary me-1"
+                  className="btn btn-primary me-1 editBtn"
                   aria-label="Edit"
-                  style={style}
+                  // style={style}
                   onClick={onClickEdit}
                   data-tip
                   data-for="edit"
@@ -67,9 +67,9 @@ function Article({
                 </button>
 
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-primary deleteBtn"
                   aria-label="Delete"
-                  style={style}
+                  // style={style}
                   onClick={onClickDelete}
                   data-tip
                   data-for="delete"

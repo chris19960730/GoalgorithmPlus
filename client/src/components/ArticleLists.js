@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 import PropTypes from 'prop-types';
 import Swal from 'sweetalert2';
 import Pagination from 'react-js-pagination';
-
+import ReactTooltip from 'react-tooltip';
 import Article from './Article';
 import Navigation from './Navigation';
 import SearchBar from './SearchBar';
@@ -241,11 +241,17 @@ function ArticleLists({ perPage, domain }) {
       <div className="articlelists-container">
         <div className="column mb-3">
           {domain === 'personal' ? <h1>My Articles</h1> : <h1>All Articles</h1>}
+
           <div className="d-flex my-1">
             {tagFilter ? (
               <div className="d-flex align-items-md-center me-2">
                 <h5>
-                  <span className="badge bg-dark">{tagFilter}</span>
+                  <span className="badge bg-dark" data-tip data-for="removeBtn">
+                    {tagFilter}
+                  </span>
+                  <ReactTooltip id="removeBtn" type="info">
+                    <span>Click X to remove the filter</span>
+                  </ReactTooltip>
                 </h5>
 
                 <button
@@ -261,7 +267,12 @@ function ArticleLists({ perPage, domain }) {
             {searchFilter ? (
               <div className="d-flex align-items-md-center">
                 <h5>
-                  <span className="badge bg-dark">{searchFilter}</span>
+                  <span className="badge bg-dark" data-tip data-for="removeBtn">
+                    {searchFilter}
+                  </span>
+                  <ReactTooltip id="removeBtn" type="info">
+                    <span>Click X to remove the filter</span>
+                  </ReactTooltip>
                 </h5>
 
                 <button
