@@ -154,10 +154,12 @@ function ArticleDetail() {
               {new Date(article.created_at).toString().substring(0, 21)}
             </cite>
           </Card.Footer>
-          <label>
+          <label className="container">
             <h3 className="votes">
-              <span>❤️</span>
-              {article.votes}
+              <span className="me-2">
+                <i class="fab fa-gratipay"></i>
+              </span>
+              <span>{article.votes}</span>
             </h3>
             <Toggle
               checked={upvoted}
