@@ -529,13 +529,3 @@ footer .sub-footer p {
   font-weight: 300;
   letter-spacing: 0.5px;
 }
-
-@media (max-width: 991px) {
-  footer .social {
-    text-align: center;
-  }
-}
-
-.for-pass-access {
-  display: none;
-}

@@ -1,0 +1,19 @@
+.sub-footer {
+  padding: 60px 0px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+.sub-footer a {
+  color: #000;
+}
+
+.sub-footer a:hover {
+  color: #004b23;
+}
+
+.sub-footer p {
+  color: #000;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}

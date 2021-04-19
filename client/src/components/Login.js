@@ -75,7 +75,6 @@ function Login() {
               <img src={logo} alt="logo" height="140" />
             </h2>
           </span>
-          <h3 className="company_title">Goalgorithm Plus</h3>
         </div>
         <div className="col-md-8 col-xs-12 col-sm-12 login_form ">
           <div className="container-fluid">

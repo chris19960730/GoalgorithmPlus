@@ -97,7 +97,6 @@ function Register() {
               alt="logo"
               className="img-fluid mb-3 d-none d-md-block"
             />
-            <h1>Create an Account</h1>
           </div>
 
           <div className="col-md-7 col-lg-6 ml-auto">

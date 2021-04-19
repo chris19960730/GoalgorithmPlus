@@ -8,6 +8,7 @@ import Pagination from 'react-js-pagination';
 import Article from './Article';
 import Navigation from './Navigation';
 import SearchBar from './SearchBar';
+import Footer from './Footer';
 import './ArticleLists.css';
 
 function ArticleLists({ perPage, domain }) {
@@ -238,7 +239,7 @@ function ArticleLists({ perPage, domain }) {
       </div>
 
       <div className="articlelists-container">
-        <div className="column">
+        <div className="column mb-3">
           {domain === 'personal' ? <h1>My Articles</h1> : <h1>All Articles</h1>}
           <div className="d-flex my-1">
             {tagFilter ? (
@@ -278,7 +279,7 @@ function ArticleLists({ perPage, domain }) {
         {renderArticles()}
       </div>
 
-      <div className="container mt-5">
+      <div className="container my-5 p-4">
         <div className="row justify-content-center ">
           <div className="col-lg-3 "></div>
           <div className="col-lg-3">
@@ -297,6 +298,7 @@ function ArticleLists({ perPage, domain }) {
           <div className="col-lg-3"></div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
