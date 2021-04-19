@@ -166,6 +166,7 @@ function NewArticle() {
                   options={options}
                   value={selected}
                   onChange={setSelected}
+                  hasSelectAll={false}
                   required
                 />
               </Col>
