@@ -138,7 +138,7 @@ ul {
 p {
   font-size: 15px;
   line-height: 25px;
-  color: #888;
+  color: #463f3a;
 }
 
 /* 
@@ -163,7 +163,7 @@ a.main-button-slider {
   font-size: 14px;
   border-radius: 25px;
   padding: 15px 25px;
-  background-color: #2b9348;
+  background-color: #004b23;
   text-transform: uppercase;
   color: #fff;
   font-weight: 600;
@@ -182,7 +182,7 @@ a.main-button {
   font-size: 14px;
   border-radius: 25px;
   padding: 15px 25px;
-  background-color: #2b9348;
+  background-color: #004b23;
   text-transform: uppercase;
   color: #fff;
   font-weight: 600;
