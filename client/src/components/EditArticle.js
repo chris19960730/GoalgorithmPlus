@@ -190,7 +190,7 @@ function EditArticle() {
                 value={editArticleFormData.content}
               />
             </Form.Group>
-            <Button type="submit" variant="outline-primary mt-3">
+            <Button type="submit" variant="outline-primary mt-3 create-btn">
               Update Article
             </Button>
           </Form>

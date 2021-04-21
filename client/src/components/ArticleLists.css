@@ -29,3 +29,7 @@
 .swal2-confirm.btn.btn-success {
   background-color: #198754;
 }
+.title {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 700;
+}

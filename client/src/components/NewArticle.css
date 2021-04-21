@@ -4,7 +4,23 @@
 
 .new-article-container {
   width: 75%;
+  font-family: 'Libre Franklin', sans-serif;
+}
+.title {
+  font-weight: 600;
+}
+.form-label {
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 .gray {
   color: #4f4f4f !important;
+}
+
+.preview {
+  font-weight: 500;
+}
+
+.create-btn {
+  font-size: 5rem;
 }

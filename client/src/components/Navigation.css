@@ -1,0 +1,15 @@
+.nav-item :focus {
+  outline: none;
+  transform: scale(1.08);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.navbar-brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.nav-item {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}

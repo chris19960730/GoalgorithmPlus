@@ -1,11 +1,3 @@
-/* Base */
-body {
-  background: #f3f3f3;
-  padding: 20px;
-  /* font-family: 'Open Sans', sans-serif; */
-  font-family: 'Playfair Display', serif;
-}
-
 /* Column */
 .column {
   flex-basis: percentage(1/3);
@@ -13,6 +5,7 @@ body {
   padding: 0 10px;
   min-width: 100%;
   box-sizing: border-box;
+  font-family: 'Libre Franklin', sans-serif;
 }
 
 /* Article (Component) */
@@ -32,6 +25,8 @@ body {
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.75rem;
+
+  font-weight: 600;
 }
 
 .btn:focus {
@@ -64,4 +59,8 @@ body {
 }
 .deleteBtn:hover {
   background-color: #bfd200;
+}
+
+.edit-btn-group {
+  width: auto;
 }

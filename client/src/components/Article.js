@@ -35,7 +35,7 @@ function Article({
           <h2 className="article__title">{title}</h2>
           <Description description={description} />
 
-          <div className="row mt-4">
+          <div className="row mt-4 justify-content-between">
             <div className="col-3">
               <button
                 className="btn btn-primary me-1 viewBtn"
@@ -48,13 +48,9 @@ function Article({
                 View more
               </button>
             </div>
-            <div className="col-6"></div>
 
             {editable ? (
-              <div className="col-3">
-                {/* <Button variant="outline-info me-2" onClick={onClickEdit}>
-                  Edit
-                </Button> */}
+              <div className="col-3 edit-btn-group">
                 <button
                   className="btn btn-primary me-1 editBtn"
                   aria-label="Edit"

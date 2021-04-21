@@ -256,9 +256,9 @@ function ArticleLists({ perPage, domain }) {
           <div className="articlelists-container">
             <div className="column mb-3">
               {domain === 'personal' ? (
-                <h1>My Articles</h1>
+                <h1 className="title">My Articles</h1>
               ) : (
-                <h1>All Articles</h1>
+                <h1 className="title">All Articles</h1>
               )}
 
               <div className="d-flex my-1">

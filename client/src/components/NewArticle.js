@@ -141,7 +141,7 @@ function NewArticle() {
       <Navigation />
 
       <div className="container new-article-container">
-        <h1>New Article</h1>
+        <h1 className="title">New Article</h1>
         <div className="row mt-5">
           <Form onSubmit={handleSubmit}>
             <Form.Group as={Row} controlId="title">
@@ -193,12 +193,12 @@ function NewArticle() {
                 onChange={onChangeEventListener}
               />
             </Form.Group>
-            <Button type="submit" variant="outline-primary mt-3">
+            <Button type="submit" variant="outline-primary mt-3 create-btn">
               Create Article
             </Button>
           </Form>
           <div className="col mt-5">
-            <h2> Content Preview</h2>
+            <h2 className="preview"> Content Preview</h2>
             <ReactMarkdown>{newArticleFormData.content}</ReactMarkdown>
           </div>
         </div>
