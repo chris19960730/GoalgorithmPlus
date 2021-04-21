@@ -32,7 +32,7 @@ function Navigation() {
     }
   }, []);
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5 p-2">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5 p-2 mt-2">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
           Goalgorithm

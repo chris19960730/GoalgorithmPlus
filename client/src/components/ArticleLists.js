@@ -268,11 +268,11 @@ function ArticleLists({ perPage, domain }) {
                       <span
                         className="badge bg-dark"
                         data-tip
-                        data-for="removeBtn"
+                        data-for="remove-tag"
                       >
                         {tagFilter}
                       </span>
-                      <ReactTooltip id="removeBtn" type="info">
+                      <ReactTooltip id="remove-tag" type="info">
                         <span>Click X to remove the filter</span>
                       </ReactTooltip>
                     </h5>
@@ -293,11 +293,11 @@ function ArticleLists({ perPage, domain }) {
                       <span
                         className="badge bg-dark"
                         data-tip
-                        data-for="removeBtn"
+                        data-for="remove-search"
                       >
                         {searchFilter}
                       </span>
-                      <ReactTooltip id="removeBtn" type="info">
+                      <ReactTooltip id="remove-search" type="info">
                         <span>Click X to remove the filter</span>
                       </ReactTooltip>
                     </h5>

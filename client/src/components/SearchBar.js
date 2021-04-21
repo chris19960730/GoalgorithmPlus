@@ -65,7 +65,6 @@ function SearchBar({ placeholder, onChange, onSearchClick, onEnter }) {
         className="form-control rounded"
         placeholder={placeholder}
         aria-label="search input"
-        aria-describedby="search-addon"
         onChange={onChangeBound}
         onKeyPress={onEnterBound}
         value={searchValue}
