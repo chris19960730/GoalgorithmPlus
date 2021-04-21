@@ -33,7 +33,10 @@ function Navigation() {
     }
   }, []);
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5 p-2 mt-2">
+    <nav
+      className="navbar navbar-expand-lg navbar-light mb-5 p-2"
+      style={{ backgroundColor: '#edefe5' }}
+    >
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
           Goalgorithm

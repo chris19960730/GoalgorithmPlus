@@ -21,6 +21,17 @@
   font-weight: 500;
 }
 
-.create-btn {
-  font-size: 5rem;
+.btn-outline-success.create-btn {
+  background-color: #00633e;
+  border-color: #00633e;
+  color: #fff;
+}
+
+.btn-outline-success.create-btn:focus {
+  background-color: #bfd200;
+  border-color: #bfd200;
+}
+.btn-outline-success.create-btn:hover {
+  background-color: #bfd200;
+  border-color: #bfd200;
 }

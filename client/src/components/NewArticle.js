@@ -193,7 +193,7 @@ function NewArticle() {
                 onChange={onChangeEventListener}
               />
             </Form.Group>
-            <Button type="submit" variant="outline-primary mt-3 create-btn">
+            <Button type="submit" variant="outline-success mt-3 create-btn">
               Create Article
             </Button>
           </Form>

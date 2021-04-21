@@ -109,7 +109,10 @@ function Login() {
             </div>
             <div className="row">
               <p>
-                Don't have an account? <a href="/register">Register Here</a>
+                Don't have an account?{' '}
+                <a className="register-link" href="/register">
+                  Register Here
+                </a>
               </p>
             </div>
           </div>

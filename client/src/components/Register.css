@@ -1,0 +1,23 @@
+.register-btn .btn {
+  background-color: #00633e;
+}
+
+.register-btn .btn:focus {
+  background-color: #bfd200;
+}
+
+.register-btn .btn:hover {
+  background-color: #bfd200;
+}
+a.login-link {
+  color: #004b23;
+}
+
+a.login-link:focus {
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
+    0px -5px 35px rgba(255, 255, 255, 0.3);
+}
+a.login-link:hover {
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
+    0px -5px 35px rgba(255, 255, 255, 0.3);
+}

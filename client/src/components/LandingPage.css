@@ -163,7 +163,7 @@ a.main-button-slider {
   font-size: 14px;
   border-radius: 25px;
   padding: 15px 25px;
-  background-color: #004b23;
+  background-color: #00633e;
   text-transform: uppercase;
   color: #fff;
   font-weight: 600;
@@ -177,12 +177,15 @@ a.main-button-slider {
 a.main-button-slider:hover {
   background-color: #bfd200;
 }
+a.main-button-slider:focus {
+  background-color: #bfd200;
+}
 
 a.main-button {
   font-size: 14px;
   border-radius: 25px;
   padding: 15px 25px;
-  background-color: #004b23;
+  background-color: #00633e;
   text-transform: uppercase;
   color: #fff;
   font-weight: 600;
@@ -194,6 +197,9 @@ a.main-button {
 }
 
 a.main-button:hover {
+  background-color: #bfd200;
+}
+a.main-button:focus {
   background-color: #bfd200;
 }
 

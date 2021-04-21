@@ -3,6 +3,7 @@ import { useHistory } from 'react-router';
 import { InputGroup, Form, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import logo from '../images/logo.png';
+import './Register.css';
 
 function Register() {
   const [registerFormData, setRegisterFormData] = useState({
@@ -148,12 +149,12 @@ function Register() {
                   />
                 </div>
 
-                <div className="form-group col-lg-12 mx-auto mb-0">
+                <div className="form-group col-lg-12 mx-auto mb-0 register-btn">
                   <button
                     type="submit"
-                    className="btn btn-primary btn-block py-2"
+                    className="btn btn-block py-2 text-white"
                   >
-                    <span className="font-weight-bold">
+                    <span className="font-weight-bold ">
                       Create your account
                     </span>
                   </button>
@@ -162,7 +163,7 @@ function Register() {
                 <div className="text-center w-100">
                   <p className="text font-weight-bold mt-5 me-3">
                     Already Registered?{' '}
-                    <a href="/login" className="text-primary ml-2">
+                    <a href="/login" className="ml-2 login-link">
                       Login
                     </a>
                   </p>
