@@ -412,39 +412,46 @@ technologies
 ---------------------------------------------
 */
 
-#technologies {
-  padding: 100px 0px;
+.technologies {
+  padding: 20px 0px 80px 0px;
 }
 
-#technologies .left-image {
+.left-image {
   align-self: center;
 }
+.gif-1 {
+  box-shadow: rgba(50, 50, 93, 0.25) 10px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
 
-#technologies .right-text ul {
+.right-text ul {
   padding: 0;
   margin: 0;
 }
 
-#technologies .right-text ul li {
+.right-text ul li {
   display: inline-block;
   margin-bottom: 60px;
 }
 
-#technologies .right-text ul li:last-child {
+.right-text ul li:last-child {
   margin-bottom: 0px;
 }
 
-#technologies .right-text img {
+.right-text img {
   display: inline-block;
   float: left;
   margin-right: 30px;
 }
 
-#technologies .right-text h2 {
+.right-text h2 {
   font-size: 22px;
   color: #1e1e1e;
   margin-bottom: 15px;
   margin-top: 3px;
+}
+.text {
+  margin-top: 20%;
 }
 
 /* 

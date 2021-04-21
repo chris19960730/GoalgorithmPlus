@@ -1,6 +1,7 @@
 import React from 'react';
 import coding from '../images/coding.png';
 import './LandingPage.css';
+import gif_1 from '../images/yarn.gif';
 function LandingPage() {
   return (
     <>
@@ -56,7 +57,7 @@ function LandingPage() {
                     Browsing all articles around our site with fast search & tag
                     filtering supported.
                   </p>
-                  <a href="#technologies" className="main-button">
+                  <a href="#articleList" className="main-button">
                     Read More
                   </a>
                 </div>
@@ -73,7 +74,7 @@ function LandingPage() {
                     Full permission on posting, editing and deleting your
                     articles.
                   </p>
-                  <a href="#technologies" className="main-button">
+                  <a href="#articleManagement" className="main-button">
                     Discover More
                   </a>
                 </div>
@@ -87,7 +88,7 @@ function LandingPage() {
                 <div className="features-icon">
                   <h2>❤️ an Article </h2>
                   <p>Upvote any articles, you can always change your mind.</p>
-                  <a href="#technologies" className="main-button">
+                  <a href="#upvote" className="main-button">
                     More Detail
                   </a>
                 </div>
@@ -97,7 +98,7 @@ function LandingPage() {
         </div>
       </section>
 
-      <section className="section" id="technologies">
+      <section className="section technologies" id="articleList">
         <div className="container">
           <div className="row">
             <div
@@ -105,58 +106,65 @@ function LandingPage() {
               data-scroll-reveal="enter left move 30px over 0.6s after 0.4s"
             >
               <img
-                src={coding}
-                className="rounded img-fluid d-block mx-auto"
+                src={gif_1}
+                className=" rounded img-fluid border-dark gif-1"
                 alt="App"
               />
             </div>
-            <div className="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12 mobile-bottom-fix">
-              <ul>
-                <li data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
-                  <div className="text">
-                    <h2>Vestibulum pulvinar rhoncus</h2>
-                    <p>
-                      Please do not redistribute this template ZIP file for a
-                      download purpose. You may{' '}
-                      <a
-                        rel="nofollow"
-                        href="https://templatemo.com/contact"
-                        target="_parent"
-                      >
-                        contact
-                      </a>{' '}
-                      us for additional licensing of our template or to get a
-                      PSD file.
-                    </p>
-                  </div>
-                </li>
-                <li data-scroll-reveal="enter right move 30px over 0.6s after 0.5s">
-                  <div className="text">
-                    <h2>Sed blandit quam in velit</h2>
-                    <p>
-                      You can{' '}
-                      <a
-                        rel="nofollow"
-                        href="https://templatemo.com/tm-540-lava-landing-page"
-                      >
-                        download Lava Template
-                      </a>{' '}
-                      from our website. Duis viverra, ipsum et scelerisque
-                      placerat, orci magna consequat ligula.
-                    </p>
-                  </div>
-                </li>
-                <li data-scroll-reveal="enter right move 30px over 0.6s after 0.6s">
-                  <div className="text">
-                    <h2>Aenean faucibus venenatis</h2>
-                    <p>
-                      Phasellus in imperdiet felis, eget vestibulum nulla.
-                      Aliquam nec dui nec augue maximus porta. Curabitur
-                      tristique lacus.
-                    </p>
-                  </div>
-                </li>
-              </ul>
+            <div className="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12">
+              <div className="text ">
+                <h2>Use filters in Article List</h2>
+                <p>
+                  Click one or more category tags to filter or search with any
+                  keyword you are interested in.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section technologies" id="articleManagement">
+        <div className="container">
+          <div className="row">
+            <div
+              className="left-image col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix-big"
+              data-scroll-reveal="enter left move 30px over 0.6s after 0.4s"
+            >
+              <img
+                src={gif_1}
+                className=" rounded img-fluid border-dark gif-1"
+                alt="App"
+              />
+            </div>
+            <div className="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12">
+              <div className="text ">
+                <h2>Manage your articles</h2>
+                <p>Update an artile or delete unwanted articles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section technologies" id="upvote">
+        <div className="container">
+          <div className="row">
+            <div
+              className="left-image col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix-big"
+              data-scroll-reveal="enter left move 30px over 0.6s after 0.4s"
+            >
+              <img
+                src={gif_1}
+                className=" rounded img-fluid border-dark gif-1"
+                alt="App"
+              />
+            </div>
+            <div className="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12">
+              <div className="text ">
+                <h2>❤️ an Article</h2>
+                <p>Like/unlike any article at any time.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -173,12 +181,12 @@ function LandingPage() {
                   More About <em>Goalgorithm</em>
                 </h2>
                 <p>
-                  Phasellus dapibus urna vel lacus accumsan, iaculis eleifend
-                  leo auctor. Duis at finibus odio. Vivamus ut pharetra arcu, in
-                  porta metus. Suspendisse blandit pulvinar ligula ut elementum.
+                  Goalgorithm is devoted to creating a place where people can
+                  share technical insights and learn about algorithms.
                   <br />
-                  If you need this contact form to send email to your inbox, you
-                  may follow our page for more detail.
+                  <br />
+                  It's still under improvements, all suggestions are welcomed!
+                  If you need to contact us, you can find us in the footer.
                 </p>
               </div>
             </div>
