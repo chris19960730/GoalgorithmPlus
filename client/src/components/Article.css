@@ -36,7 +36,7 @@
 }
 
 .viewBtn {
-  background-color: #004b23;
+  background-color: #00633e;
 }
 
 .viewBtn:hover {
@@ -44,7 +44,7 @@
 }
 
 .editBtn {
-  background-color: #333333;
+  background-color: #3b4a3f;
 }
 
 .editBtn:hover {
@@ -52,7 +52,7 @@
 }
 
 .deleteBtn {
-  background-color: #333333;
+  background-color: #3b4a3f;
 }
 .deleteBtn:hover {
   background-color: #bfd200;

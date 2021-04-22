@@ -33,3 +33,36 @@
   font-family: 'Libre Franklin', sans-serif;
   font-weight: 700;
 }
+
+.search-field {
+  width: 75%;
+}
+
+.create-article-btn {
+  width: auto;
+}
+.create-btn {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 12px 20px;
+  background-color: #00633e;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  transition: all 0.3s ease 0s;
+}
+
+a.create-btn:hover {
+  background-color: #bfd200;
+}
+a.create-btn:focus {
+  background-color: #bfd200;
+}
+
+.page-item.active .page-link {
+  background-color: #00633e;
+}

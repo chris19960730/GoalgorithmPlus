@@ -75,7 +75,7 @@ function Navigation() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                More Actions
+                Manage Articles
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
@@ -94,7 +94,11 @@ function Navigation() {
           <div className="justify-content-end">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  href="/allMyArticles"
+                >
                   Welcome, {userName}
                 </a>
               </li>

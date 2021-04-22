@@ -230,26 +230,28 @@ function ArticleLists({ perPage, domain }) {
         <div>
           <div className="container mb-5">
             <div className="row justify-content-center my-3 ">
-              <SearchBar
-                placeholder="Search here"
-                onChange={setSearchTempFilter}
-                onSearchClick={() => {
-                  Swal.fire(
-                    'Search completed',
-                    'Successfully filtered!',
-                    'success'
-                  );
-                  setSearchFilter(searchTempFilter);
-                }}
-                onEnter={() => {
-                  Swal.fire(
-                    'Search completed',
-                    'Successfully filtered!',
-                    'success'
-                  );
-                  setSearchFilter(searchTempFilter);
-                }}
-              />
+              <div className="col-9 search-field d-flex justify-content-center">
+                <SearchBar
+                  placeholder="Search here"
+                  onChange={setSearchTempFilter}
+                  onSearchClick={() => {
+                    Swal.fire(
+                      'Search completed',
+                      'Successfully filtered!',
+                      'success'
+                    );
+                    setSearchFilter(searchTempFilter);
+                  }}
+                  onEnter={() => {
+                    Swal.fire(
+                      'Search completed',
+                      'Successfully filtered!',
+                      'success'
+                    );
+                    setSearchFilter(searchTempFilter);
+                  }}
+                />
+              </div>
             </div>
           </div>
 
