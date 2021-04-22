@@ -1,7 +1,9 @@
 import React from 'react';
 import coding from '../images/coding.png';
 import './LandingPage.css';
-import gif_1 from '../images/yarn.gif';
+import gif_1 from '../images/gif-1.gif';
+import gif_2 from '../images/gif-2.gif';
+import gif_3 from '../images/gif-3.gif';
 function LandingPage() {
   return (
     <>
@@ -106,7 +108,7 @@ function LandingPage() {
               data-scroll-reveal="enter left move 30px over 0.6s after 0.4s"
             >
               <img
-                src={gif_1}
+                src={gif_3}
                 className=" rounded img-fluid border-dark gif-1"
                 alt="App"
               />
@@ -132,7 +134,7 @@ function LandingPage() {
               data-scroll-reveal="enter left move 30px over 0.6s after 0.4s"
             >
               <img
-                src={gif_1}
+                src={gif_2}
                 className=" rounded img-fluid border-dark gif-1"
                 alt="App"
               />
