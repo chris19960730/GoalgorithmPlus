@@ -1,5 +1,7 @@
 .description {
   color: #666;
   line-height: 1.5rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 500;
 }

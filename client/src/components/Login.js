@@ -3,7 +3,7 @@ import { useHistory } from 'react-router';
 import Swal from 'sweetalert2';
 import './Login.css';
 import Input from './Input';
-
+import logo from '../images/logo.png';
 function Login() {
   const history = useHistory();
 
@@ -56,7 +56,7 @@ function Login() {
         } else {
           Swal.fire(
             'Oops...',
-            'This account does not exsit in our system!',
+            'The email and/or password you specified are not correct.',
             'error'
           );
         }
@@ -67,15 +67,16 @@ function Login() {
   };
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid" role="main">
       <div className="row main-content bg-success text-center">
         <div className="col-md-4 text-center company__info">
           <span className="company__logo">
-            <h2>
-              <span className="fa fa-android"></span>
-            </h2>
+            <h1>
+              <a href="/">
+                <img src={logo} alt="logo" height="140" />
+              </a>
+            </h1>
           </span>
-          <h4 className="company_title">Your Company Logo</h4>
         </div>
         <div className="col-md-8 col-xs-12 col-sm-12 login_form ">
           <div className="container-fluid">
@@ -110,7 +111,10 @@ function Login() {
             </div>
             <div className="row">
               <p>
-                Don't have an account? <a href="/register">Register Here</a>
+                Don't have an account?{' '}
+                <a className="register-link" href="/register">
+                  Register Here
+                </a>
               </p>
             </div>
           </div>

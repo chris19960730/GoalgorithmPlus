@@ -4,4 +4,34 @@
 
 .new-article-container {
   width: 75%;
+  font-family: 'Libre Franklin', sans-serif;
+}
+.title {
+  font-weight: 600;
+}
+.form-label {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.gray {
+  color: #4f4f4f !important;
+}
+
+.preview {
+  font-weight: 500;
+}
+
+.btn-outline-success.create-btn {
+  background-color: #00633e;
+  border-color: #00633e;
+  color: #fff;
+}
+
+.btn-outline-success.create-btn:focus {
+  background-color: #bfd200;
+  border-color: #bfd200;
+}
+.btn-outline-success.create-btn:hover {
+  background-color: #bfd200;
+  border-color: #bfd200;
 }

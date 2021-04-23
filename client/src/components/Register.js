@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
-import { InputGroup, Form, Button } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
 import Swal from 'sweetalert2';
+import logo from '../images/logo.png';
+import './Register.css';
 
 function Register() {
   const [registerFormData, setRegisterFormData] = useState({
@@ -23,14 +25,12 @@ function Register() {
     const form = event.currentTarget;
     event.preventDefault();
     event.stopPropagation();
-
+    console.log('clicked');
     if (form.checkValidity() === false) {
       console.log('invalid');
     } else {
       console.log('validation passed');
-      // add check email exists.
       checkEmail();
-      // postRegisterData();
     }
     setValidated(true);
   };
@@ -87,73 +87,93 @@ function Register() {
   };
 
   return (
-    <div className="row py-5 mt-4 align-items-center">
-      <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
-        <img
-          src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg"
-          alt=""
-          className="img-fluid mb-3 d-none d-md-block"
-        />
-        <h1>Create an Account</h1>
-      </div>
+    <div role="main">
+      <div className="container">
+        <div className="row py-5 mt-4 align-items-center">
+          <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
+            <h1>
+              <a href="/">
+                <img
+                  src={logo}
+                  alt="logo"
+                  className="img-fluid mb-3 d-none d-md-block"
+                />
+              </a>
+            </h1>
+          </div>
 
-      <div className="col-md-7 col-lg-6 ml-auto">
-        <Form noValidate validated={validated} onSubmit={handleSubmit}>
-          <Form.Group md="4" controlId="validationCustomUsername">
-            <Form.Label>Username</Form.Label>
-            <InputGroup hasValidation>
-              <InputGroup.Prepend>
-                <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
-              </InputGroup.Prepend>
-              <Form.Control
-                type="text"
-                placeholder="Username"
-                aria-describedby="inputGroupPrepend"
-                required
-                name="username"
-                onChange={onChangeEventListener}
-              />
-              <Form.Control.Feedback type="invalid">
-                Please choose a username.
-              </Form.Control.Feedback>
-            </InputGroup>
-          </Form.Group>
-          <Form.Group md="4" controlId="validationCustom02">
-            <Form.Label>Email Address</Form.Label>
-            <Form.Control
-              required
-              type="email"
-              name="email"
-              placeholder="Enter Email"
-              onChange={onChangeEventListener}
-            />
-            <Form.Control.Feedback type="invalid">
-              Please provide a valid email address
-            </Form.Control.Feedback>
-          </Form.Group>
+          <div className="col-md-7 col-lg-6 ml-auto">
+            <Form noValidate validated={validated} onSubmit={handleSubmit}>
+              <div className="row">
+                <div className="mb-4">
+                  <label className="form-label" htmlFor="username">
+                    Username
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="username"
+                    placeholder="Username"
+                    required
+                    onChange={onChangeEventListener}
+                  />
+                </div>
 
-          <Form.Group md="3" controlId="validationCustom05">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              name="password"
-              placeholder="Password"
-              required
-              onChange={onChangeEventListener}
-            />
-          </Form.Group>
+                <div className="mb-4">
+                  <label className="form-label" htmlFor="email">
+                    Email
+                  </label>
+                  <input
+                    className="form-control"
+                    required
+                    type="email"
+                    name="email"
+                    placeholder="Enter Email"
+                    onChange={onChangeEventListener}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please provide a valid email address
+                  </Form.Control.Feedback>
+                </div>
 
-          <Form.Group>
-            <Form.Check
-              required
-              label="Agree to terms and conditions"
-              feedback="You must agree before submitting."
-            />
-          </Form.Group>
-          <Button type="submit" variant="outline-success mt-3">
-            Create Account
-          </Button>
-        </Form>
+                <div className="mb-4">
+                  <label className="form-label" htmlFor="password">
+                    Password
+                  </label>
+                  <input
+                    id="form4Example1"
+                    className="form-control"
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    required
+                    onChange={onChangeEventListener}
+                  />
+                </div>
+
+                <div className="form-group col-lg-12 mx-auto mb-0 register-btn">
+                  <button
+                    type="submit"
+                    className="btn btn-block py-2 text-white"
+                  >
+                    <span className="font-weight-bold ">
+                      Create your account
+                    </span>
+                  </button>
+                </div>
+
+                <div className="text-center w-100">
+                  <p className="text font-weight-bold mt-5 me-3">
+                    Already Registered?{' '}
+                    <a href="/login" className="ml-2 login-link">
+                      Login
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </Form>
+          </div>
+        </div>
       </div>
     </div>
   );

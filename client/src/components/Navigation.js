@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import Swal from 'sweetalert2';
+import './Navigation.css';
 
 function Navigation() {
   const history = useHistory();
@@ -14,7 +15,7 @@ function Navigation() {
       title: 'Goodbye~',
       text: 'See you next time!',
     });
-    history.push('/login');
+    history.push('/');
   };
 
   useEffect(() => {
@@ -32,9 +33,12 @@ function Navigation() {
     }
   }, []);
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5">
+    <nav
+      className="navbar navbar-expand-lg navbar-light mb-5 p-2"
+      style={{ backgroundColor: '#edefe5' }}
+    >
       <div className="container-fluid">
-        <a className="navbar-brand" href="/Articles">
+        <a className="navbar-brand" href="/">
           Goalgorithm
         </a>
         <button
@@ -71,7 +75,7 @@ function Navigation() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                More Actions
+                Manage Articles
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
@@ -90,14 +94,18 @@ function Navigation() {
           <div className="justify-content-end">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  href="/allMyArticles"
+                >
                   Welcome, {userName}
                 </a>
               </li>
               <li className="nav-item">
                 <form onSubmit={handleLogOut}>
                   <input
-                    className="btn btn-block btn-danger"
+                    className="btn btn-block btn-outline-dark"
                     type="submit"
                     value="logout"
                   />

@@ -1,0 +1,22 @@
+.nav-item :focus {
+  outline: none;
+  transform: scale(1.08);
+}
+
+.navbar-brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.nav-item {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.navbar-brand:focus {
+  transform: scale(1.1);
+}
+
+.navbar-brand:hover {
+  transform: scale(1.1);
+}

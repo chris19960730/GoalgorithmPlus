@@ -1,11 +1,12 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
+import ReactTooltip from 'react-tooltip';
 import './Article.css';
 import Tag from './Tag';
 import Description from './Description';
 
 function Article({
+  id,
   tags,
   title,
   description,
@@ -28,26 +29,58 @@ function Article({
     <>
       <div className="column">
         <article className="article">
-          {renderTags()}
+          <div data-tip data-for={'tag' + id}>
+            {renderTags()}
+            <ReactTooltip id={'tag' + id} type="dark">
+              <span>Click to filter by tag</span>
+            </ReactTooltip>
+          </div>
           <h2 className="article__title">{title}</h2>
           <Description description={description} />
 
-          <div className="row">
+          <div className="row mt-4 justify-content-between">
             <div className="col-3">
-              <Button variant="outline-dark" onClick={onView}>
-                View More
-              </Button>
+              <button
+                className="btn btn-primary me-1 viewBtn"
+                aria-label="View"
+                onClick={onView}
+                data-tip
+                data-for={'view' + id}
+              >
+                View more
+              </button>
             </div>
-            <div className="col-6"></div>
 
             {editable ? (
-              <div className="col-3">
-                <Button variant="outline-info me-2" onClick={onClickEdit}>
-                  Edit
-                </Button>
-                <Button variant="outline-danger" onClick={onClickDelete}>
-                  Delete
-                </Button>
+              <div className="col-3 edit-btn-group">
+                <button
+                  className="btn btn-primary me-1 editBtn"
+                  aria-label="Edit"
+                  onClick={onClickEdit}
+                  data-tip
+                  data-for={'edit' + id}
+                >
+                  <i className="fas fa-edit"></i>
+                </button>
+
+                <button
+                  className="btn btn-primary deleteBtn"
+                  aria-label="Delete"
+                  onClick={onClickDelete}
+                  data-tip
+                  data-for={'delete' + id}
+                >
+                  <i className="fas fa-trash-alt"></i>
+                </button>
+                <ReactTooltip id={'view' + id} type="dark">
+                  <span>View the full article</span>
+                </ReactTooltip>
+                <ReactTooltip id={'delete' + id} type="error">
+                  <span>Delete the article</span>
+                </ReactTooltip>
+                <ReactTooltip id={'edit' + id} type="info">
+                  <span>Edit the article</span>
+                </ReactTooltip>
               </div>
             ) : (
               <div className="col-3"></div>
@@ -60,6 +93,7 @@ function Article({
 }
 
 Article.propTypes = {
+  id: PropTypes.string.isRequired,
   tags: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,

@@ -10,10 +10,59 @@
 
 /* Container */
 .articlelists-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   width: 90%;
   max-width: 960px;
   margin: 0 auto;
+}
+
+.page-item :focus {
+  outline: none;
+  transform: scale(1.2);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.swal2-cancel.btn.btn-danger {
+  background-color: #dc3545;
+}
+
+.swal2-confirm.btn.btn-success {
+  background-color: #198754;
+}
+.title {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 700;
+}
+
+.search-field {
+  width: 75%;
+}
+
+.create-article-btn {
+  width: auto;
+}
+.create-btn {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 12px 20px;
+  background-color: #00633e;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  transition: all 0.3s ease 0s;
+}
+
+a.create-btn:hover {
+  background-color: #bfd200;
+}
+a.create-btn:focus {
+  background-color: #bfd200;
+}
+
+.page-item.active .page-link {
+  background-color: #00633e;
 }

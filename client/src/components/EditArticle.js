@@ -5,6 +5,7 @@ import { useLocation, useHistory } from 'react-router';
 import Swal from 'sweetalert2';
 
 import Navigation from './Navigation';
+import Footer from './Footer';
 import ReactMarkdown from 'react-markdown';
 import MultiSelect from 'react-multi-select-component';
 import './NewArticle.css';
@@ -83,22 +84,22 @@ function EditArticle() {
   };
 
   const colors = {
-    Array: { color: '#9ede73', name: 'Array' },
-    'Hash Table': { color: '#f7ea00', name: 'Hash Table' },
-    'Data Structure': { color: '#e48900', name: 'Data Structure' },
-    Math: { color: '#be0000', name: 'Math' },
-    'Two Pointers': { color: '#5b6d5b', name: 'Two Pointers' },
-    'Divide and Conquer': { color: '#9ddfd3', name: 'Divide and Conquer' },
-    Greedy: { color: '#31326f', name: 'Greedy' },
-    Design: { color: '#2b2e4a', name: 'Design' },
-    Sort: { color: '#903749', name: 'Sort' },
-    Database: { color: '#53354a', name: 'Database' },
-    SQL: { color: '#822659', name: 'SQL' },
-    'Sliding Window': { color: '#e4bad4', name: 'Sliding Window' },
-    JavaScript: { color: '#433520', name: 'JavaScript' },
-    'Computer System': { color: '#025955', name: 'Computer System' },
-    Python: { color: '#00917c', name: 'Python' },
-    'Programming Language': { color: '#85603f', name: 'Programming Language' },
+    Array: { color: '#183B61', name: 'Array' },
+    'Hash Table': { color: '#4F1F58', name: 'Hash Table' },
+    'Data Structure': { color: '#4F010C', name: 'Data Structure' },
+    Math: { color: '#004F10', name: 'Math' },
+    'Two Pointers': { color: '#4C5240', name: 'Two Pointers' },
+    'Divide and Conquer': { color: '#040326', name: 'Divide and Conquer' },
+    Greedy: { color: '#404571', name: 'Greedy' },
+    Design: { color: '#7F6807', name: 'Design' },
+    Sort: { color: '#56776c', name: 'Sort' },
+    Database: { color: '#864000', name: 'Database' },
+    SQL: { color: '#301b3f', name: 'SQL' },
+    'Sliding Window': { color: '#301b3f', name: 'Sliding Window' },
+    JavaScript: { color: '#4a47a3', name: 'JavaScript' },
+    'Computer System': { color: '#314e52', name: 'Computer System' },
+    Python: { color: '#393e46', name: 'Python' },
+    'Programming Language': { color: '#222831', name: 'Programming Language' },
   };
   const options = [
     { label: 'Array', value: 'Array' },
@@ -131,74 +132,76 @@ function EditArticle() {
     },
   ];
   return (
-    <>
+    <div role="main">
       <Navigation />
 
-      <div className="container new-article-container ">
+      <div className="container new-article-container my-5">
         <h1>Edit Article</h1>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group as={Row} controlId="title">
-            <Form.Label column sm="2">
-              Title
-            </Form.Label>
-            <Col sm="10">
+        <div className="row mt-5">
+          <Form onSubmit={handleSubmit}>
+            <Form.Group as={Row} controlId="title">
+              <Form.Label column sm="2">
+                Title
+              </Form.Label>
+              <Col sm="10">
+                <Form.Control
+                  required
+                  name="title"
+                  onChange={onChangeEventListener}
+                  placeholder="Please input the title of the article..."
+                  value={editArticleFormData.title}
+                />
+              </Col>
+            </Form.Group>
+            <Form.Group as={Row} controlId="tags">
+              <Form.Label column sm="2">
+                Tags
+              </Form.Label>
+              <Col sm="10">
+                <MultiSelect
+                  options={options}
+                  value={selected}
+                  onChange={setSelected}
+                  required
+                />
+              </Col>
+            </Form.Group>
+            <Form.Group controlId="description">
+              <Form.Label>Description</Form.Label>
               <Form.Control
                 required
-                name="title"
+                as="textarea"
+                rows={3}
+                placeholder="Please input the description of the article..."
+                name="description"
                 onChange={onChangeEventListener}
-                placeholder="Please input the title of the article..."
-                value={editArticleFormData.title}
+                value={editArticleFormData.description}
               />
-            </Col>
-          </Form.Group>
-          <Form.Group as={Row} controlId="tags">
-            <Form.Label column sm="2">
-              Tags
-            </Form.Label>
-            <Col sm="10">
-              <MultiSelect
-                options={options}
-                value={selected}
-                onChange={setSelected}
-                labelledBy="Select"
+            </Form.Group>
+            <Form.Group controlId="content">
+              <Form.Label>Content</Form.Label>
+              <Form.Control
                 required
+                as="textarea"
+                rows={3}
+                placeholder="Please input the full article..."
+                name="content"
+                onChange={onChangeEventListener}
+                value={editArticleFormData.content}
               />
-            </Col>
-          </Form.Group>
-          <Form.Group controlId="description">
-            <Form.Label>Description</Form.Label>
-            <Form.Control
-              required
-              as="textarea"
-              rows={3}
-              placeholder="Please input the description of the article..."
-              name="description"
-              onChange={onChangeEventListener}
-              value={editArticleFormData.description}
-            />
-          </Form.Group>
-          <Form.Group controlId="content">
-            <Form.Label>Content</Form.Label>
-            <Form.Control
-              required
-              as="textarea"
-              rows={3}
-              placeholder="Please input the full article..."
-              name="content"
-              onChange={onChangeEventListener}
-              value={editArticleFormData.content}
-            />
-          </Form.Group>
-          <Button type="submit" variant="outline-success mt-3">
-            Update Article
-          </Button>
-        </Form>
-        <div className="container mt-5">
-          <h3> Content Preview</h3>
-          <ReactMarkdown>{editArticleFormData.content}</ReactMarkdown>
+            </Form.Group>
+            <Button type="submit" variant="outline-success mt-3 create-btn">
+              Update Article
+            </Button>
+          </Form>
+          <div className="col mt-5">
+            <h2> Content Preview</h2>
+            <ReactMarkdown>{editArticleFormData.content}</ReactMarkdown>
+          </div>
         </div>
       </div>
-    </>
+      <Footer />
+    </div>
   );
 }
 

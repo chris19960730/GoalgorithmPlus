@@ -1,4 +1,4 @@
-# GoalgorithmPlus
+# Goalgorithm
 
 ## Author
 

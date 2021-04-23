@@ -72,6 +72,7 @@ module.exports = {
       const articles = db.collection('article');
       const allArticles = await articles
         .find(filter)
+        .sort({ updated_at: -1 })
         .skip(parseInt(start))
         .limit(parseInt(itemPerPage))
         .toArray();
@@ -107,6 +108,7 @@ module.exports = {
       const articles = db.collection('article');
       const userArticles = await articles
         .find(filter)
+        .sort({ updated_at: -1 })
         .skip(parseInt(start))
         .limit(parseInt(itemPerPage))
         .toArray();
