@@ -14,7 +14,10 @@ Users can search articles by titles or descriptions, filter articles by tags, Th
 
 ## Screenshot
 
-![screenshot](https://raw.githubusercontent.com/MARVELOUSbear/goalgorithm/main/client/public/screenshots/Screen%20Shot%202021-04-09%20at%209.14.15%20PM.png)
+![screenshot](https://github.com/chris19960730/GoalgorithmPlus/blob/main/client/public/screenshots/screenshot.png)
+![gif-1](https://github.com/chris19960730/GoalgorithmPlus/blob/main/client/src/images/gif-1.gif)
+![gif-2](https://github.com/chris19960730/GoalgorithmPlus/blob/main/client/src/images/gif-2.gif)
+![gif-3](https://github.com/chris19960730/GoalgorithmPlus/blob/main/client/src/images/gif-3.gif)
 
 ## Tech requirements
 
@@ -41,16 +44,16 @@ Users can search articles by titles or descriptions, filter articles by tags, Th
 
 ## Link to the video demonstration
 
-[demonstration video](https://www.youtube.com/watch?v=MkwmP-e3Ijo&ab_channel=YoungChris)
+[demonstration video](https://www.youtube.com/watch?v=IcchvrOADVc)
 
 ## Demo Link
 
-[https://goalgorithm.herokuapp.com/](https://goalgorithm.herokuapp.com/)
+[https://goalgorithm-plus.herokuapp.com/](https://goalgorithm-plus.herokuapp.com/)
 
 ## Google Slides
 
-[Slides](https://docs.google.com/presentation/d/1px7xRJxnmZkagRxhljRlmWs-l8fGx21CTxnyP2agIUU/edit#slide=id.gcf3d61a2d6_0_91)
+[https://docs.google.com/presentation/d/19H_QqDfk9OLwDmXcTAlQ_73DOlo-Zv0yF62zWmLWNYs/edit?usp=sharing](https://docs.google.com/presentation/d/19H_QqDfk9OLwDmXcTAlQ_73DOlo-Zv0yF62zWmLWNYs/edit?usp=sharing)
 
 ## MIT License
 
-[MIT License](https://github.com/MARVELOUSbear/goalgorithm/blob/main/LICENSE)
+[MIT License](https://github.com/chris19960730/GoalgorithmPlus/blob/main/LICENSE)
