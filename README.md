@@ -8,9 +8,7 @@
 
 ## Project Objective
 
-This is an algorithm study notes sharing app. It consists of 4 parts: **authentication**(register/login), **All article lists**, **My article lists**, and **Article management**.
-
-Users can search articles by titles or descriptions, filter articles by tags, They can also create, update and delete their own articles and view all articles, they can upvote articles as well.
+This is an iteration of [goalgorithm](https://github.com/MARVELOUSbear/goalgorithm) for accessibility and usability improvement
 
 ## Screenshot
 
