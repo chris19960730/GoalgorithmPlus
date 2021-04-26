@@ -45,10 +45,13 @@ function Article({
                 aria-label="View"
                 onClick={onView}
                 data-tip
-                data-for={'view' + id}
+                data-for={'view' + id.toString()}
               >
                 View more
               </button>
+              <ReactTooltip id={'view' + id.toString()} type="dark">
+                <span>View the full article</span>
+              </ReactTooltip>
             </div>
 
             {editable ? (
@@ -58,7 +61,7 @@ function Article({
                   aria-label="Edit"
                   onClick={onClickEdit}
                   data-tip
-                  data-for={'edit' + id}
+                  data-for={'edit' + id.toString()}
                 >
                   <i className="fas fa-edit"></i>
                 </button>
@@ -68,17 +71,15 @@ function Article({
                   aria-label="Delete"
                   onClick={onClickDelete}
                   data-tip
-                  data-for={'delete' + id}
+                  data-for={'delete' + id.toString()}
                 >
                   <i className="fas fa-trash-alt"></i>
                 </button>
-                <ReactTooltip id={'view' + id} type="dark">
-                  <span>View the full article</span>
-                </ReactTooltip>
-                <ReactTooltip id={'delete' + id} type="error">
+
+                <ReactTooltip id={'delete' + id.toString()} type="error">
                   <span>Delete the article</span>
                 </ReactTooltip>
-                <ReactTooltip id={'edit' + id} type="info">
+                <ReactTooltip id={'edit' + id.toString()} type="info">
                   <span>Edit the article</span>
                 </ReactTooltip>
               </div>

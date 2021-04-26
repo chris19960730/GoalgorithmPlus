@@ -32,7 +32,7 @@ function LandingPage() {
                     Welcome to <em>Goalgorithm</em>
                   </h1>
                   <p>
-                    A place where you can post any angorithm/software developing
+                    A place where you can post any algorithm/software developing
                     related topics and interact with other people.
                   </p>
                   <a href="/login" className="main-button-slider me-2">

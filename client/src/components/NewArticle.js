@@ -183,7 +183,13 @@ function NewArticle() {
               />
             </Form.Group>
             <Form.Group controlId="content">
-              <Form.Label>Content</Form.Label>
+              <Form.Label>
+                Content{' '}
+                <span className=" small font-italic font-weight-light">
+                  (Markdown syntax supoorted)
+                </span>
+              </Form.Label>
+
               <Form.Control
                 required
                 as="textarea"

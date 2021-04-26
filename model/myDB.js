@@ -62,6 +62,7 @@ module.exports = {
         $or: [
           { title: { $regex: searchFilter } },
           { description: { $regex: searchFilter } },
+          { 'tags.name': searchFilter },
         ],
       };
     }
@@ -98,6 +99,7 @@ module.exports = {
         $or: [
           { title: { $regex: searchFilter } },
           { description: { $regex: searchFilter } },
+          { 'tags.name': searchFilter },
         ],
       };
     }
@@ -128,6 +130,7 @@ module.exports = {
         $or: [
           { title: { $regex: searchFilter } },
           { description: { $regex: searchFilter } },
+          { 'tags.name': searchFilter },
         ],
       };
     }
@@ -154,6 +157,7 @@ module.exports = {
         $or: [
           { title: { $regex: searchFilter } },
           { description: { $regex: searchFilter } },
+          { 'tags.name': searchFilter },
         ],
       };
     }

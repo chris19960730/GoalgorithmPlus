@@ -199,6 +199,9 @@ a.main-button {
 a.main-button:hover {
   background-color: #bfd200;
 }
+a.main-button:focus {
+  background-color: #bfd200;
+}
 
 /* 
 ---------------------------------------------
