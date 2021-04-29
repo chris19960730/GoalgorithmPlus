@@ -1,0 +1,25 @@
+UX review:
+
+1. nice css styles and fonts! Also cute loading animation.
+2. great idea to use gif pictures in landing page! May be better if they are larger and move slower. A little hard to see the detail clearly.
+3. Not very easy to notice that there are more stuffs in landing page as the welcome msg takes the whole viewport. Would be better if user can see the head of cards for Article list/Article Management/❤️ an Article, so that user will scroll down to check the stuffs out instead of clicking get start button directly.
+4. When sign up, it would be better to ask user to confirm the password.
+5. Tada modal is cute. However, a little distractive to the user. Especially for the like/unlike button and tag filtering.
+6. It would be better to disable the nav link if user is in the page. E.g. Disable the Home link if user is in home page already.
+7. A little redundant to have a toggle under the like/unlink button. Use different styles on a heart icon should be good enough.
+8. need to type enter to do the filter in the filter bar. Would be better if the page can filter with user's typing.
+9. Tag is clickable in detail page. However, it doesn't do anything except the style change on the tag.
+10. No an obvious way to go back from detail page to home page except clicking the home link.
+11. add some margin/padding between the No and Yes button in the modal to delete an article.
+12. no way to cancel the editing of an article except doing the nav.
+13. can't see existing tag when editing an article.
+
+Code review:
+1. nice code organization! Very easy to find the css files for the components.
+2. A little weird to put myDB.js under model. Would be better to name it db. And we should use " instead of ', so does the routes/index.js.(Required by professor)
+3. For SearchBar, would be good to put svgs into its own file and put into the image folder, so does the styles.
+4. Should use await instead of then to handle the promises returned by fetch.
+5. For NewArticle.js and EditArticle.js, would be good to put the options and their colors into DB and fetch them while loading.
+6. There is a comment "// eslint-disable-next-line react-hooks/exhaustive-deps" in line 27 of Login.js, is it useful?
+7. May be good to break the landing page into multiple components.
+8. index.css is empty. May be good to delete it.
