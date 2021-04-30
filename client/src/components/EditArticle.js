@@ -165,6 +165,7 @@ function EditArticle() {
                   required
                 />
               </Col>
+    //is it possible to get the previouse tags choice here, then user doesn't need to go back to the articles page to find their previous choice of tag. 
             </Form.Group>
             <Form.Group controlId="description">
               <Form.Label>Description</Form.Label>
